@@ -27,6 +27,12 @@
 # dir() # display attributes and methods
 
 
+
+
+##### OOP
+
+
+
 # class waiter:
 #     def __init__(self):
 #         self.tables = []
@@ -213,47 +219,222 @@
 # print(price_q)
 
 
-from collections import deque
+# from collections import deque
 
-class queue:
+# class queue:
     
-    def __init__(self):
-        self.x = deque()
+#     def __init__(self):
+#         self.x = deque()
         
-    def enqueue(self, val):
-        self.x.appendleft(val)
+#     def enqueue(self, val):
+#         self.x.appendleft(val)
         
-    def dequeue(self):
-        self.x.pop()
+#     def dequeue(self):
+#         self.x.pop()
         
-    def isEmpty(self):
-        return len(self.x) == 0
+#     def isEmpty(self):
+#         return len(self.x) == 0
     
-    def size(self):
-        return len(self.x)
+#     def size(self):
+#         return len(self.x)
     
     
-pq = queue()
+# pq = queue()
 
-pq.enqueue({
-    'company': 'Wall Mart',
-    'timestamp': '15 apr, 11.01 AM',
-    'price': 131.10
-})
-pq.enqueue({
-    'company': 'Wall Mart',
-    'timestamp': '15 apr, 11.02 AM',
-    'price': 132
-})
-pq.enqueue({
-    'company': 'Wall Mart',
-    'timestamp': '15 apr, 11.03 AM',
-    'price': 135
-})
+# pq.enqueue({
+#     'company': 'Wall Mart',
+#     'timestamp': '15 apr, 11.01 AM',
+#     'price': 131.10
+# })
+# pq.enqueue({
+#     'company': 'Wall Mart',
+#     'timestamp': '15 apr, 11.02 AM',
+#     'price': 132
+# })
+# pq.enqueue({
+#     'company': 'Wall Mart',
+#     'timestamp': '15 apr, 11.03 AM',
+#     'price': 135
+# })
 
-print(pq.size())
-print(list(pq.x))
+# print(pq.size())
+# print(list(pq.x))
+# print()
+# pq.dequeue()
+
+# print(list(pq.x))
+
+
+
+###
+
+# num = [0,1,2,4,5,6,7,8,9]
+
+# print(num[:-3]) # except last three
+#print(num[-3:]) # from -3 to last 
+
+# print(num[::-1])
+
+# num[1:1] = [11,22] ## Inserting elements at a certain Index
+
+# print(num)
+
+# del num[1:2]
+
+# print(num)
+
+
+
+# lst = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+# # First element (two ways)
+# print(lst[0])
+# print(lst[-len(lst)]) # -len(lst) = -10 (first element)
+
+# # Last element (two ways)
+# print(lst[-1])
+# print(lst[len(lst) - 1]) # len(lst)-1 = 9 (last element)
+
+
+
+
+# import random
+# def single_point_crossover(p1,p2):
+#     point = random.randint(1,len(p1)-1)
+    
+#     c1 = p2[:point] + p1[point:]
+#     c2 = p1[:point] + p2[point:]
+    
+#     return c1,c2
+
+# p1 = [1,0,1,0,1]
+# p2 = [0,0,1,1,0]
+# c1,c2 = single_point_crossover(p1,p2)
+# print(c1)
+# print(c2)
+
+
+# a = {1:'a',2:'b',3:'c',4:'d'}
+# b = {13:'a',21:'b',32:'c',43:'d'}
+
+# print(b[1])
+
+# for i in a:
+#     print(i, end=" ")
+# print()
+# for i, j in a.items():
+#     print(f"Key: {i}, Value: {j}")
+    
+# print()
+
+# for i in a.values():
+#     print(i, end=" ")
+    
+    
+# merge = a | b
+# print(merge)
+
+
+# def invert_dict(a):
+#     invereted = {}
+#     for i, j in a.items():
+#         invereted[j] = i
+#     return invereted
+
+# print(a)
+# print(invert_dict(a))
+
+
+
+# def build_dict_from_lists(keys, values):
+#     result = {}
+#     for i in range(len(keys)):
+#         result[keys[i]] = values[i]
+#     return result
+
+# key_list   = ['x', 'y', 'z']
+# value_list = [10,  20,  30 ]
+# d = build_dict_from_lists(key_list, value_list)
+# print(d) 
+
+
+
+# population = [
+#     {'genes': [1, 0, 1, 1, 0],  'fitness': 3},
+#     {'genes': [0, 1, 1, 0, 0],  'fitness': 2},
+#     {'genes': [1, 1, 1, 1, 1],  'fitness': 5},
+# ]
+
+
+
+
+''' Heap Functions and their Methods'''
+
+
+
+# import heapq
+
+# nums = [110, 20, 115, 30, 40]
+
+# heapq.heapify(nums) # sorts in min-heap order but not fully in min to max order
+# print("Heap Queue:", nums)
+# heapq.heappop(nums) # pops the first element of the list 
+# heapq.heappush(nums, 4) # pushed an element to the heap
+# print(nums)
+
+
+
+# n largest & smallest 
+
+import heapq
+
+h = [100,20,90,10,2,1,23]
+
+heapq.heapify(h)
+print(h)
 print()
-pq.dequeue()
+largest = heapq.nlargest(3,h)
+print("3 largest Elements:", largest )
+print()
+smallest = heapq.nsmallest(3, h)
+print("3 Smallest Elements:", smallest)
 
-print(list(pq.x))
+heapq.heappushpop(h,4) # pops smallest element and push the given element 
+
+print(h)
+
+                
+import heapq
+
+pq = []
+
+heapq.heappush(pq, (10, "A"))
+heapq.heappush(pq, (5, "B"))
+heapq.heappush(pq, (20, "C"))
+
+print(pq)
+
+
+
+
+
+
+
+# import heapq
+
+# nums = [10, 20, 15, 30, 40]
+
+# # Convert into a max-heap by inverting values
+# max_heap = []
+# for n in nums:
+#     max_heap.append(-n)
+
+# heapq.heapify(max_heap)
+# heaped = []
+# for n in max_heap:
+#     heaped.append(-n)
+
+# print(heaped)
+# # Access largest element (invert sign again)
+# largest = -max_heap[0]
+# print("Largest element:", largest)
