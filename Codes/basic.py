@@ -219,6 +219,7 @@
 # print(price_q)
 
 
+
 # from collections import deque
 
 # class queue:
@@ -386,33 +387,33 @@
 
 # n largest & smallest 
 
-import heapq
+# import heapq
 
-h = [100,20,90,10,2,1,23]
+# h = [100,20,90,10,2,1,23]
 
-heapq.heapify(h)
-print(h)
-print()
-largest = heapq.nlargest(3,h)
-print("3 largest Elements:", largest )
-print()
-smallest = heapq.nsmallest(3, h)
-print("3 Smallest Elements:", smallest)
+# heapq.heapify(h)
+# print(h)
+# print()
+# largest = heapq.nlargest(3,h)
+# print("3 largest Elements:", largest )
+# print()
+# smallest = heapq.nsmallest(3, h)
+# print("3 Smallest Elements:", smallest)
 
-heapq.heappushpop(h,4) # pops smallest element and push the given element 
+# heapq.heappushpop(h,4) # pops smallest element and push the given element 
 
-print(h)
+# print(h)
 
                 
-import heapq
+# import heapq
 
-pq = []
+# pq = []
 
-heapq.heappush(pq, (10, "A"))
-heapq.heappush(pq, (5, "B"))
-heapq.heappush(pq, (20, "C"))
+# heapq.heappush(pq, (10, "A"))
+# heapq.heappush(pq, (5, "B"))
+# heapq.heappush(pq, (20, "C"))
 
-print(pq)
+# print(pq)
 
 
 
@@ -438,3 +439,95 @@ print(pq)
 # # Access largest element (invert sign again)
 # largest = -max_heap[0]
 # print("Largest element:", largest)
+
+
+
+
+
+### Recursion 
+
+# def backward(n):
+#     if n == 0:
+#         return 
+#     print(n)
+#     backward(n-1)
+    
+# backward()
+
+
+# print(min(2,3))
+
+
+
+
+# num = [22,3,4,5,21]
+
+# # # num.pop()
+
+# # # print(num)
+
+
+# # for i in num:
+# #     print(i, end=" ")
+
+
+# num.sort()
+
+# print(num)
+
+# num.sort(reverse=True)
+
+# print(num)
+
+
+def minmax(tree,is_max):
+    
+    if type(tree) != list:
+        return tree
+    
+    if is_max:
+        best = float('-inf')
+        
+        for child in tree:
+            value = minmax(child, False)
+            best = max(best, value)
+            
+        return best 
+    
+    else:
+        best = float('inf')
+        
+        for child in tree:
+            value = minmax(child, False)
+            best = max(best, value)
+            
+        return best
+
+tree = [
+    [[3, 5], [6, 9]],
+    [[1, 2], [0, -1]]
+]
+
+print("Best value:", minmax(tree, True))
+
+
+
+
+
+
+## MinMax
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
