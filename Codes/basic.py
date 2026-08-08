@@ -6,27 +6,100 @@
 
 # for i in range(0, len(a), 2):
 #     print(a[i], end=" ")
-    
 
 
+# print(type(a)) # <class 'list'>
+
+
+
+#-------------------------
 # my_dict = {'Biscuit':20,'Chocolate':30,'Guns':150,'perfume':50}
 
 # print(my_dict.items())
 
 
 # list_of_students = ['Johaier','Afra','Omor','Arham','Saifan','Sumaiya']
-
 # set_of_students = set(list_of_students)
-
 # print(set_of_students)
 # print("-------")
 # print(list_of_students)
 
+# print(dir(list_of_students)) # display attributes and methods
 
 # help() # inside it write anything 
 # dir() # display attributes and methods
 
 
+''' .split():
+
+# Default whitespace split
+"hello   world \n python".split()  
+# Output: ['hello', 'world', 'python']
+
+# Custom separator & split limit
+"a-b-c-d".split("-", maxsplit=2)  
+# Output: ['a', 'b', 'c-d']
+
+# '''
+# a = "hgh lsdkfj-f dfkkjsdfk dflkjk-fjf"
+# print(a.split('-',maxsplit=5))
+
+''' map() method:
+# Applying int() to convert strings
+numbers = map(int, ["10", "20", "30"])
+print(numbers)        # Output: <map object at ...>
+print(list(numbers))  # Output: [10, 20, 30]
+
+# Multiple iterables (2^3 and 3^2)
+powers = list(map(pow, [2, 3], [3, 2])) 
+# Output: [8, 9]
+
+'''
+
+# a = [65.4, 734.1, 10]
+# print(list(map(str,a)))
+
+
+''' random.sample()
+import random
+
+deck = ["Ace", "King", "Queen", "Jack", "10", "9"]
+
+# Deal 3 unique cards
+hand = random.sample(deck, 3)
+
+print(hand)  # Output e.g., ['Queen', 'Ace', '10']
+print(deck)  # Original list remains completely unchanged
+
+'''
+# can't put 0 inside random.Choice(0,2) X
+'''
+import random
+
+# Using randint
+num1 = random.randint(1, 6) -- better as it needs less function 
+
+# Equivalent using choice (note the +1 because range upper bound is exclusive)
+num2 = random.choice(range(1, 7))
+'''
+
+
+''' "".join(chromosome) -- 110011001 -- return chromosome in this way but str() can't
+
+def format_chromosome(chromosome):
+    return "".join(chromosome)
+
+# DNA base list
+dna_list = ['A', 'T', 'C', 'G', 'A']
+print(format_chromosome(dna_list))
+# Output: "ATCGA"
+
+# Binary gene list
+bit_list = ['1', '0', '1', '1', '0']
+print(format_chromosome(bit_list))
+# Output: "10110"
+
+'''
 
 
 ##### OOP
@@ -480,35 +553,35 @@
 # print(num)
 
 
-def minmax(tree,is_max):
+# def minmax(tree,is_max):
     
-    if type(tree) != list:
-        return tree
+#     if type(tree) != list:
+#         return tree
     
-    if is_max:
-        best = float('-inf')
+#     if is_max:
+#         best = float('-inf')
         
-        for child in tree:
-            value = minmax(child, False)
-            best = max(best, value)
+#         for child in tree:
+#             value = minmax(child, False)
+#             best = max(best, value)
             
-        return best 
+#         return best 
     
-    else:
-        best = float('inf')
+#     else:
+#         best = float('inf')
         
-        for child in tree:
-            value = minmax(child, False)
-            best = max(best, value)
+#         for child in tree:
+#             value = minmax(child, False)
+#             best = max(best, value)
             
-        return best
+#         return best
 
-tree = [
-    [[3, 5], [6, 9]],
-    [[1, 2], [0, -1]]
-]
+# tree = [
+#     [[3, 5], [6, 9]],
+#     [[1, 2], [0, -1]]
+# ]
 
-print("Best value:", minmax(tree, True))
+# print("Best value:", minmax(tree, True))
 
 
 
