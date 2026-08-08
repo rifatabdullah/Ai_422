@@ -74,12 +74,7 @@ def fitness_function(chromosome, n, t):
                 
         return -(overlap+consistency)
         
-        
-               
-                
-                
-                
-        
+      
         
 # chromosome
 
@@ -221,12 +216,82 @@ print(f"Child_1: {c1}\nChild_2: {c2}\n")
 
 
 
+# Tournament Based selection
+
+def tour_selection(population,n,t,k=3):
+        participants = random.sample(population,k)
+        
+        winner = participants[0]
+        
+        for chromosome in participants:
+                if fitness_function(chromosome,n,t) > fitness_function(winner,n,t):
+                        winner = chromosome
+                        score = fitness_function(chromosome,n,t)
+        return winner, score
+
+
+p = create_population(10,3,3)
+Wchromo, Score = tour_selection(p,3,3)
+print(f"Winner Parent Chromosome from Tournament-based Selection is: {Wchromo} & tentative Score: {Score}")
 
 
 
 
 
 
+# Selecting 2 best chromosomes 
+
+# best1 = None
+# best2 = None
+
+# best1_fitness = float("-inf")
+# best2_fitness = float("-inf")
+
+# for chromosome in population:
+
+#     current_fitness = fitness_function(chromosome, n, t)
+
+#     if current_fitness > best1_fitness:
+
+#         # Move current best to second best
+#         best2 = best1
+#         best2_fitness = best1_fitness
+
+#         # New best
+#         best1 = chromosome
+#         best1_fitness = current_fitness
+
+#     elif current_fitness > best2_fitness:
+
+#         # New second best
+#         best2 = chromosome
+#         best2_fitness = current_fitness
+        
+# return best1,best1_fitness,best2, best2_fitness
+
+#--------------------------------
+best1 = None
+best2 = None
+
+best1_fitness = float("-inf")
+best2_fitness = float("-inf")
+
+for chromosome in population:
+
+    current_fitness = fitness_function(chromosome, n, t)
+    
+    if current_fitness > best1_fitness:
+            best2 = best1
+            best2_fitness = best1_fitness            
+            best1_fitness = current_fitness
+            best1 = chromosome
+    elif current_fitness > best2_fitness: # what if fitness value is not greater for best1 but it's better for best2 
+            best2_fitness = current_fitness
+            best2 = chromosome
+
+return best1,best1_fitness,best2, best2_fitness
+            
+            
 
 
 

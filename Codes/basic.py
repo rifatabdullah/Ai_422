@@ -188,7 +188,7 @@ print(format_chromosome(bit_list))
 # stack.append('e')
 
 # print(stack)
-
+# print("-----------")
 # stack.pop()
 # print(stack)
 
@@ -247,11 +247,50 @@ print(format_chromosome(bit_list))
 # print(m)
 
 
+
+# from collections import deque
+
+# class stack:
+#     def __init__(self):
+#         self.x = deque()
+     
+#     def push(self,value):
+#         self.x.append(value)
+#     def pop(self):
+#         return self.x.pop()
+#     def peek(self):
+#         return self.x[-1]
+#     def isEmpty(self):
+#         return len(self.x) == 0
+#     def size(self):
+#         return len(self.x)
+        
+#     def reverse(self,a):
+#         s = stack()
+#         for i in a:
+#             s.push(i)
+        
+#         re=""
+#         for i in a:
+#             re += s.pop()
+            
+#         return re
+        
+# st = stack()
+# a = "Norway_Alfe Haaland"
+# for i in range(len(a)):
+#     st.push(a[i])
+# print(st.x)
+# pop = st.pop()
+# print(pop)
+
+# w = "I am Alfe Haaland from the land of mountains"
+# reverse = st.reverse(w)
+# print(reverse)
     
     
     
-    
-## Valid Parentheses 
+# Valid Parentheses 
 
 # class vaPa:
 #     def isValid(self, inp: str):
@@ -268,12 +307,11 @@ print(format_chromosome(bit_list))
 #                     pop = stack.pop() # (, {, [
 #                     if pop != dic[i]: # ( = dic[')']
 #                         return False
-#                     else:
-#                         return True
+#         return len(stack) == 0
                     
         
 # s = vaPa()
-# print(s.isValid("({[]})"))                        
+# print(s.isValid("({[)(]})"))                        
 
 
 
@@ -313,6 +351,23 @@ print(format_chromosome(bit_list))
 #         return len(self.x)
     
     
+    
+    
+    
+# from collections import deque
+
+# class queue:
+#     def __init__(self):
+#         self.x = deque()
+#     def enqueue(self,value):
+#         return self.x.appendleft(value)
+#     def dequeue(self):
+#         return self.x.pop()
+    
+#     def size(self):
+#         return len(self.x)
+        
+    
 # pq = queue()
 
 # pq.enqueue({
@@ -344,10 +399,11 @@ print(format_chromosome(bit_list))
 
 # num = [0,1,2,4,5,6,7,8,9]
 
-# print(num[:-3]) # except last three
-#print(num[-3:]) # from -3 to last 
+# # print(num[:-3]) # except last three
+# # print(num[-3:]) # from -3 to last 
 
-# print(num[::-1])
+# print(num[::-1]) # reverse the list 
+
 
 # num[1:1] = [11,22] ## Inserting elements at a certain Index
 
@@ -391,7 +447,7 @@ print(format_chromosome(bit_list))
 # a = {1:'a',2:'b',3:'c',4:'d'}
 # b = {13:'a',21:'b',32:'c',43:'d'}
 
-# print(b[1])
+# print(b[13])
 
 # for i in a:
 #     print(i, end=" ")
@@ -429,6 +485,17 @@ print(format_chromosome(bit_list))
 # key_list   = ['x', 'y', 'z']
 # value_list = [10,  20,  30 ]
 # d = build_dict_from_lists(key_list, value_list)
+# print(d) 
+
+
+# def buildDICT(key,value):
+#     new = {}
+#     for i in range(len(key)):
+#         new[key[i]] = value[i]
+#     return new
+# key_list   = ['xA', 'yr', 'z']
+# value_list = [10,  210,  30 ]
+# d = buildDICT(key_list, value_list)
 # print(d) 
 
 
@@ -535,17 +602,17 @@ print(format_chromosome(bit_list))
 
 # num = [22,3,4,5,21]
 
-# # # num.pop()
+# num.pop()
 
-# # # print(num)
+# print(num)
 
 
-# # for i in num:
-# #     print(i, end=" ")
+# for i in num:
+#     print(i, end=" ")
 
 
 # num.sort()
-
+# print()
 # print(num)
 
 # num.sort(reverse=True)
@@ -584,15 +651,63 @@ print(format_chromosome(bit_list))
 # print("Best value:", minmax(tree, True))
 
 
-
-
-
-
 ## MinMax
 
 
 
+# -----------------------
+# heap
 
+# import heapq
+# a = [-4,3,1,0,2,5,10,8,12,9]
+# heapq.heapify(a)
+# print(a)
+
+# min = heapq.heappop(a)
+# print(a, min)
+# add = heapq.heappush(a,90)
+# print(a)
+# a = heapq.heappushpop(a,100)
+# print(a)
+
+
+
+
+
+# ## Heap Sort 
+# import heapq
+
+# def heapSort(arr):
+#     heapq.heapify(arr)
+#     n = len(arr)
+#     lst = [0]*n
+    
+#     for i in range(len(arr)):
+#         min = heapq.heappop(arr)
+#         lst[i] = min
+#     return lst
+
+# s = heapSort([3,2,13,12,-9,1,33,23])
+# print(s)
+
+
+
+# ## Max Heap 
+# import heapq
+
+# def MaxHeap(arr):
+#     n = len(arr)
+    
+#     for i in range(n):
+#         arr[i] = -arr[i]
+        
+#     heapq.heapify(arr)
+    
+#     return arr
+
+# a = MaxHeap([-4,3,1,0,2,5,10,8,12,9])
+# print(a)
+    
 
 
 
