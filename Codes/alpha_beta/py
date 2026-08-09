@@ -1,0 +1,17 @@
+# ---------- INPUT ----------
+pool = input().split(',')
+target = input()
+sid = input().split()
+
+# Last n digits of SID
+n = len(target)
+weights = list(map(int, sid[-n:]))
+
+# ---------- MINIMAX ----------
+score, gene = minimax(
+    pool, "", target, weights,
+    True, float('-inf'), float('inf')
+)
+
+print("Best gene sequence generated:", gene)
+print("Utility score:", score)

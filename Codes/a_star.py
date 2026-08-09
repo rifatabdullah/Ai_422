@@ -152,7 +152,7 @@ def mazeSolver():
     
     pq = []
     h = heuristic(a,b)
-    heapq.heappush(pq,(h,0,a,b,""))
+    heapq.heappush(pq,(h,0,a,b,"")) # f,g,r,c,move
     
     g_cost = {(a,b):0}
     
@@ -167,7 +167,7 @@ def mazeSolver():
         
         f,g,r,c, path = heapq.heappop(pq)
         if (r,c) == (c,d):
-            print(c)
+            print(g)
             print(path)
             flag = True
             break
